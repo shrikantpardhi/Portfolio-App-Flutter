@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/screens/main_screen.dart';
+import 'package:portfolio_app/screens/main_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,42 +26,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Portfolio(),
-    );
-  }
-}
-
-class Portfolio extends StatelessWidget {
-  const Portfolio({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.white,
-          title: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  radius: 28,
-                  backgroundColor: Colors.white,
-                  foregroundImage: NetworkImage('https://picsum.photos/200'),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Shrikant',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          )),
     );
   }
 }
