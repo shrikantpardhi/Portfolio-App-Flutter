@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/widgets/body.dart';
+import 'package:portfolio_app/widgets/buttonrow.dart';
+import 'package:portfolio_app/widgets/contact_button.dart';
 
 class Portfolio extends StatelessWidget {
   const Portfolio({Key? key}) : super(key: key);
@@ -33,32 +36,26 @@ class Portfolio extends StatelessWidget {
           ],
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton.icon(
-              style: TextButton.styleFrom(
-                  textStyle: TextStyle(
-                    color: Colors.black12,
-                  ),
-                  backgroundColor: Colors.amberAccent,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24.0))),
-              onPressed: () {},
-              icon: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.send_sharp),
-              ),
-              label: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Contact Me',
-                  style: TextStyle(
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
+          ContactButton(
+            buttonText: 'Contact Me',
+            icon: Icon(
+              Icons.send_sharp,
             ),
+            onPressed: () {
+              print("Contact Me");
+            },
           )
+        ],
+      ),
+      body: Stack(
+        children: [
+          Body(),
+          Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.all(48.0),
+                child: SizedBox(height: 60, child: ButtonRow()),
+              )),
         ],
       ),
     );
